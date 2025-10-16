@@ -35,7 +35,7 @@ class SectionRenderer {
    * @returns {Promise<string>} The rendered section HTML
    */
   async renderSection(sectionId, options) {
-    const { cache = !Shopify.designMode } = options ?? {};
+    const { cache = !Pardis.designMode } = options ?? {};
     const { url } = options ?? {};
     this.#abortPendingMorph(sectionId);
 
@@ -100,7 +100,7 @@ class SectionRenderer {
    * Caches the page sections
    */
   #cachePageSections() {
-    for (const section of document.querySelectorAll('.shopify-section')) {
+    for (const section of document.querySelectorAll('.pardis-section')) {
       const url = buildSectionRenderingURL(section.id);
       if (this.#cache.get(url)) return;
       if (containsShadowRoot(section)) return;
@@ -110,7 +110,7 @@ class SectionRenderer {
   }
 }
 
-const SECTION_ID_PREFIX = 'shopify-section-';
+const SECTION_ID_PREFIX = 'pardis-section-';
 
 /**
  * Builds a section rendering URL

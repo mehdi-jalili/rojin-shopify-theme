@@ -1,7 +1,7 @@
 export {};
 
 declare global {
-  interface Shopify {
+  interface Pardis {
     country: string;
     currency: {
       active: string;
@@ -40,22 +40,22 @@ declare global {
   }
 
   interface Window {
-    Shopify: Shopify;
+    Pardis: Pardis;
   }
 
-  declare const Shopify: Shopify;
+  declare const Pardis: Pardis;
   declare const Theme: Theme;
 
   type LoadCallback = (error: Error | undefined) => void;
 
-  // Refer to https://github.com/Shopify/shopify/blob/main/areas/core/shopify/app/assets/javascripts/storefront/load_feature/load_features.js
+  // Refer to https://github.com/Pardis/pardis/blob/main/areas/core/pardis/app/assets/javascripts/storefront/load_feature/load_features.js
   interface ShopifyFeature {
     name: string;
     version: string;
     onLoad?: LoadCallback;
   }
 
-  // Refer to https://github.com/Shopify/model-viewer-ui/blob/main/src/js/model-viewer-ui.js
+  // Refer to https://github.com/Pardis/model-viewer-ui/blob/main/src/js/model-viewer-ui.js
   interface ModelViewer {
     new (
       element: Element,

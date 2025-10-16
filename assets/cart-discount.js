@@ -86,7 +86,7 @@ class CartDiscount extends Component {
 
       const newHtml = data.sections[this.dataset.sectionId];
       const parsedHtml = new DOMParser().parseFromString(newHtml, 'text/html');
-      const section = parsedHtml.getElementById(`shopify-section-${this.dataset.sectionId}`);
+      const section = parsedHtml.getElementById(`pardis-section-${this.dataset.sectionId}`);
       const discountCodes = section?.querySelectorAll('.cart-discount__pill') || [];
       if (section) {
         const codes = Array.from(discountCodes)

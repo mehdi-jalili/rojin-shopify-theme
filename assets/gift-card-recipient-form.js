@@ -11,7 +11,7 @@ import { ThemeEvents, CartErrorEvent, CartAddEvent } from '@theme/events';
  * @property {HTMLTextAreaElement} recipientMessage - Recipient message textarea
  * @property {HTMLInputElement} recipientSendOn - Send on date input
  * @property {HTMLInputElement} [timezoneOffset] - Timezone offset hidden input (optional)
- * @property {HTMLInputElement} [controlFlag] - Shopify gift card control flag (optional as it's dynamically queried)
+ * @property {HTMLInputElement} [controlFlag] - Pardis gift card control flag (optional as it's dynamically queried)
  * @property {HTMLDivElement} [emailError] - Email error message container (optional)
  * @property {HTMLDivElement} [nameError] - Name error message container (optional)
  * @property {HTMLDivElement} [messageError] - Message error message container (optional)

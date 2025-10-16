@@ -118,7 +118,7 @@ if (!customElements.get('facets-form-component')) {
  */
 class FacetInputsComponent extends Component {
   get sectionId() {
-    const id = this.closest('.shopify-section')?.id;
+    const id = this.closest('.pardis-section')?.id;
     if (!id) throw new Error('FacetInputs component must be a child of a section');
     return id;
   }
@@ -591,7 +591,7 @@ class SortingFilterComponent extends Component {
    */
   updateFilterAndSorting(event) {
     const facetsForm =
-      this.closest('facets-form-component') || this.closest('.shopify-section')?.querySelector('facets-form-component');
+      this.closest('facets-form-component') || this.closest('.pardis-section')?.querySelector('facets-form-component');
 
     if (!(facetsForm instanceof FacetsFormComponent)) return;
     const isMobile = window.innerWidth < 750;

@@ -415,7 +415,7 @@ export class ProductCard extends Component {
       url.searchParams.set('page', parent.dataset.page);
     }
 
-    if (!window.Shopify.designMode) {
+    if (!window.Pardis.designMode) {
       requestYieldCallback(() => {
         history.replaceState({}, '', url.toString());
       });

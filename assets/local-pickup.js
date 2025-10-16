@@ -9,7 +9,7 @@ class LocalPickup extends Component {
   connectedCallback() {
     super.connectedCallback();
 
-    const closestSection = this.closest(`.shopify-section, dialog`);
+    const closestSection = this.closest(`.pardis-section, dialog`);
 
     /** @type {(event: VariantUpdateEvent) => void} */
     const variantUpdated = (event) => {

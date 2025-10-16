@@ -9,13 +9,13 @@ import { ThemeEvents, VariantUpdateEvent } from '@theme/events';
  */
 class ProductPrice extends HTMLElement {
   connectedCallback() {
-    const closestSection = this.closest('.shopify-section, dialog');
+    const closestSection = this.closest('.pardis-section, dialog');
     if (!closestSection) return;
     closestSection.addEventListener(ThemeEvents.variantUpdate, this.updatePrice);
   }
 
   disconnectedCallback() {
-    const closestSection = this.closest('.shopify-section, dialog');
+    const closestSection = this.closest('.pardis-section, dialog');
     if (!closestSection) return;
     closestSection.removeEventListener(ThemeEvents.variantUpdate, this.updatePrice);
   }

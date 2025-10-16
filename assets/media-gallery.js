@@ -16,7 +16,7 @@ export class MediaGallery extends Component {
     super.connectedCallback();
 
     const { signal } = this.#controller;
-    const target = this.closest('.shopify-section, dialog');
+    const target = this.closest('.pardis-section, dialog');
 
     target?.addEventListener(ThemeEvents.variantUpdate, this.#handleVariantUpdate, { signal });
     this.refs.zoomDialogComponent?.addEventListener(ThemeEvents.zoomMediaSelected, this.#handleZoomMediaSelected, {

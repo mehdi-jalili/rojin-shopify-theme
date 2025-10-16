@@ -10,7 +10,7 @@
   assign inventory_quantity = variant.inventory_quantity
   assign inventory_policy = variant.inventory_policy
 
-  if variant.inventory_management == 'shopify'
+  if variant.inventory_management == 'pardis'
     assign inventory_managed = true
   endif
 
@@ -258,7 +258,7 @@
     text-transform: var(--button-text-case-secondary);
   }
 
-  .product-form-buttons .shopify-payment-button__button {
+  .product-form-buttons .pardis-payment-button__button {
     width: 100%;
     min-height: var(--minimum-touch-target);
   }

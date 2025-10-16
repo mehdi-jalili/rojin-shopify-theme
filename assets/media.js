@@ -148,7 +148,7 @@ class ProductModel extends DeferredMedia {
   loadContent() {
     super.loadContent();
 
-    Shopify.loadFeatures([
+    Pardis.loadFeatures([
       {
         name: 'model-viewer-ui',
         version: '1.0',
@@ -178,18 +178,18 @@ class ProductModel extends DeferredMedia {
   async setupModelViewerUI(errors) {
     if (errors) return;
 
-    if (!Shopify.ModelViewerUI) {
+    if (!Pardis.ModelViewerUI) {
       await this.#waitForModelViewerUI();
     }
 
-    if (!Shopify.ModelViewerUI) return;
+    if (!Pardis.ModelViewerUI) return;
 
     const element = this.querySelector('model-viewer');
     if (!element) return;
 
     const signal = this.#abortController.signal;
 
-    this.modelViewerUI = new Shopify.ModelViewerUI(element);
+    this.modelViewerUI = new Pardis.ModelViewerUI(element);
     if (!this.modelViewerUI) return;
 
     this.playMedia();
@@ -226,8 +226,8 @@ class ProductModel extends DeferredMedia {
   }
 
   /**
-   * Waits for Shopify.ModelViewerUI to be defined.
-   * This seems to be necessary for Safari since Shopify.ModelViewerUI is always undefined on the first try.
+   * Waits for Pardis.ModelViewerUI to be defined.
+   * This seems to be necessary for Safari since Pardis.ModelViewerUI is always undefined on the first try.
    * @returns {Promise<void>}
    */
   async #waitForModelViewerUI() {
@@ -235,7 +235,7 @@ class ProductModel extends DeferredMedia {
     const interval = 50;
 
     for (let i = 0; i < maxAttempts; i++) {
-      if (Shopify.ModelViewerUI) {
+      if (Pardis.ModelViewerUI) {
         return;
       }
       await new Promise((resolve) => setTimeout(resolve, interval));

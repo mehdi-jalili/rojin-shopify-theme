@@ -23,7 +23,7 @@
   ref="acceleratedCheckoutButtonContainer"
   {{ block.shopify_attributes }}
   {% if request.visual_preview_mode %}
-    data-shopify-visual-preview
+    data-pardis-visual-preview
   {% endif %}
   {% unless can_add_to_cart %}
     hidden
@@ -35,7 +35,7 @@
 </div>
 
 {% stylesheet %}
-  .accelerated-checkout-block[data-shopify-visual-preview] {
+  .accelerated-checkout-block[data-pardis-visual-preview] {
     width: 300px;
   }
 
@@ -51,7 +51,7 @@
     --button-color: var(--color-primary-hover);
   }
 
-  .shopify-payment-button__more-options[aria-hidden='true'] {
+  .pardis-payment-button__more-options[aria-hidden='true'] {
     display: none;
   }
 {% endstylesheet %}

@@ -212,7 +212,7 @@
     {% endif %}
   "
   {% if request.visual_preview_mode %}
-    data-shopify-visual-preview
+    data-pardis-visual-preview
   {% endif %}
   {% if section.settings.blurred_reflection and has_video_multiple == false %}
     data-blur-shadow="true"
@@ -287,7 +287,7 @@
     min-height: calc(var(--hero-min-height) - var(--hero-height-offset));
   }
 
-  .hero[data-shopify-visual-preview] {
+  .hero[data-pardis-visual-preview] {
     --hero-min-height: 600px;
 
     min-height: 600px;
@@ -874,7 +874,7 @@
           "name": "t:names.button",
           "settings": {
             "label": "Shop Now",
-            "link": "shopify://collections/all"
+            "link": "pardis://collections/all"
           }
         }
       },
@@ -918,7 +918,7 @@
           "type": "button",
           "settings": {
             "label": "Shop Now",
-            "link": "shopify://collections/all"
+            "link": "pardis://collections/all"
           }
         }
       },

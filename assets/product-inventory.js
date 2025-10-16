@@ -3,12 +3,12 @@ import { morph } from '@theme/morph';
 
 class ProductInventory extends HTMLElement {
   connectedCallback() {
-    const closestSection = this.closest('.shopify-section, dialog');
+    const closestSection = this.closest('.pardis-section, dialog');
     closestSection?.addEventListener(ThemeEvents.variantUpdate, this.updateInventory);
   }
 
   disconnectedCallback() {
-    const closestSection = this.closest('.shopify-section, dialog');
+    const closestSection = this.closest('.pardis-section, dialog');
     closestSection?.removeEventListener(ThemeEvents.variantUpdate, this.updateInventory);
   }
 

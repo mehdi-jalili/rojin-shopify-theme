@@ -2,7 +2,7 @@
  * ------------------------------------------------------------
  * IMPORTANT: The contents of this file are auto-generated.
  *
- * This file may be updated by the Shopify admin language editor
+ * This file may be updated by the Pardis admin language editor
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
@@ -53,19 +53,19 @@
     "cart_features": "Cart features",
     "colors": "Colors",
     "collection_page": "Collection page",
-    "complementary_products": "Complementary products must be set up using the Search & Discovery app. [Learn more](https://help.shopify.com/manual/online-store/search-and-discovery)",
+    "complementary_products": "Complementary products must be set up using the Search & Discovery app. [Learn more](https://help.pardis.com/manual/online-store/search-and-discovery)",
     "content_width": "Content width only applies when the section width is set to full width.",
     "copyright": "Copyright",
     "customer_account": "Customer account",
-    "describe_the_video_for": "Describe the video for customers using screen readers. [Learn more](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
+    "describe_the_video_for": "Describe the video for customers using screen readers. [Learn more](https://help.pardis.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
     "edit_empty_state_collection_in_theme_settings": "Edit empty state collection in [theme settings](/editor?context=theme&category=search)",
     "edit_logo_in_theme_settings": "Edit logo in [theme settings](/editor?context=theme&category=logo%20and%20favicon)",
     "edit_price_in_theme_settings": "Edit price formatting in [theme settings](/editor?context=theme&category=currency%20code)",
     "edit_variants_in_theme_settings": "Edit variant styling in [theme settings](/editor?context=theme&category=variants)",
-    "email_signups_create_customer_profiles": "Signups add [customer profiles](https://help.shopify.com/manual/customers)",
+    "email_signups_create_customer_profiles": "Signups add [customer profiles](https://help.pardis.com/manual/customers)",
     "email_signup": "Email signup",
-    "follow_on_shop_eligiblity": "For the button to show, the Shop channel must be installed and Shop Pay activated. [Learn more](https://help.shopify.com/en/manual/online-store/themes/customizing-themes/add-shop-buttons)",
-    "gift_card_form_description": "Customers can send gift cards to a recipient's email with a personal message. [Learn more](https://help.shopify.com/manual/products/gift-card-products)",
+    "follow_on_shop_eligiblity": "For the button to show, the Shop channel must be installed and Shop Pay activated. [Learn more](https://help.pardis.com/en/manual/online-store/themes/customizing-themes/add-shop-buttons)",
+    "gift_card_form_description": "Customers can send gift cards to a recipient's email with a personal message. [Learn more](https://help.pardis.com/manual/products/gift-card-products)",
     "fonts": "Fonts",
     "grid": "Grid",
     "grid_layout": "Grid layout",
@@ -126,7 +126,7 @@
     "size": "Size",
     "slideshow_width": "Slide width",
     "social_media": "Social media",
-    "submissions_are_sent_to_store_email_address": "Submissions are sent to your store's [sender email address](https://admin.shopify.com/settings/notifications)",
+    "submissions_are_sent_to_store_email_address": "Submissions are sent to your store's [sender email address](https://admin.pardis.com/settings/notifications)",
     "submit_button": "Submit button",
     "swatches": "Swatches",
     "submenu_feature": "Submenu feature",
@@ -143,7 +143,7 @@
     "visibility": "Visibility",
     "width": "Width",
     "width_is_automatically_optimized": "Width is automatically optimized for mobile.",
-    "app_required_for_ratings": "An app is required for product ratings. [Learn more](https://help.shopify.com/manual/apps)"
+    "app_required_for_ratings": "An app is required for product ratings. [Learn more](https://help.pardis.com/manual/apps)"
   },
   "html_defaults": {
     "share_information_about_your": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
@@ -154,11 +154,11 @@
     "auto_open_cart_drawer": "When enabled, the cart drawer will automatically open when a product is added to cart.",
     "carousel_hover_behavior_not_supported": "\"Carousel\" hover is not supported when \"Carousel\" type is selected at the section level",
     "carousel_layout_on_mobile": "Carousel is used on mobile",
-    "checkout_buttons": "Allows buyers to check out faster and can improve conversion. [Learn more](https://help.shopify.com/manual/online-store/dynamic-checkout)",
+    "checkout_buttons": "Allows buyers to check out faster and can improve conversion. [Learn more](https://help.pardis.com/manual/online-store/dynamic-checkout)",
     "custom_heading": "Custom heading",
-    "custom_liquid": "Add app snippets or other code to create advanced customizations. [Learn more](https://shopify.dev/docs/api/liquid)",
+    "custom_liquid": "Add app snippets or other code to create advanced customizations. [Learn more](https://pardis.dev/docs/api/liquid)",
     "edit_presets_in_theme_settings": "Edit presets in [theme settings](/editor?context=theme&category=typography)",
-    "enable_filtering_info": "Customize filters with the [Search & Discovery app](https://help.shopify.com/manual/online-store/search-and-discovery/filters)",
+    "enable_filtering_info": "Customize filters with the [Search & Discovery app](https://help.pardis.com/manual/online-store/search-and-discovery/filters)",
     "grid_layout_on_mobile": "Grid layout is used for mobile",
     "hide_logo_on_home_page_help": "Logo will remain visible when sticky header is active",
     "hover_effects": "Applies to product and collection cards",
@@ -993,7 +993,7 @@
     "show_grid_layout_selector": "Show grid layout selector",
     "show_inventory_quantity": "Show low stock quantity",
     "show_pickup_availability": "Show pickup availability",
-    "show_powered_by_shopify": "Show \"Powered by Shopify\"",
+    "show_powered_by_shopify": "Show \"Powered by Pardis\"",
     "show_sale_price_first": "Show sale price first",
     "show_search": "Show search",
     "show_second_image_on_hover": "Show second image on hover",

@@ -394,15 +394,15 @@ p:empty {
 }
 
 /* Make the actual section background transparent, and instead apply it to a separate sibling element to enable stacking with hero shadow  */
-.shopify-section:not(.header-section) :is(.section, .cart__summary-container) {
+.pardis-section:not(.header-section) :is(.section, .cart__summary-container) {
   background: transparent;
 }
 
-.shopify-section:not(.header-section):has(.section) {
+.pardis-section:not(.header-section):has(.section) {
   position: relative;
 }
 
-.shopify-section:not(.header-section) .section-background {
+.pardis-section:not(.header-section) .section-background {
   content: '';
   position: absolute;
   inset: 0;
@@ -955,7 +955,7 @@ summary::-webkit-details-marker {
 }
 
 /* When header is transparent, pull the first main content section up to sit under the floating header */
-body:has(.header[transparent]) .content-for-layout > .shopify-section:first-child {
+body:has(.header[transparent]) .content-for-layout > .pardis-section:first-child {
   margin-top: calc(var(--header-group-height) * -1);
 }
 
@@ -1282,7 +1282,7 @@ results-list[initialized] {
 /* Buttons */
 .button,
 .button-secondary,
-button.shopify-payment-button__button--unbranded {
+button.pardis-payment-button__button--unbranded {
   --text-align: center;
 
   display: grid;
@@ -1324,7 +1324,7 @@ button.shopify-payment-button__button--unbranded {
   border-radius: var(--style-border-radius-buttons-secondary);
 }
 
-button.shopify-payment-button__button--unbranded {
+button.pardis-payment-button__button--unbranded {
   font-family: var(--button-font-family-primary);
   text-transform: var(--button-text-case-primary);
 }
@@ -1358,7 +1358,7 @@ input:not(:placeholder-shown)::placeholder {
 }
 
 .button,
-button.shopify-payment-button__button--unbranded {
+button.pardis-payment-button__button--unbranded {
   --button-color: var(--color-primary-button-text);
   --button-background-color: var(--color-primary-button-background);
   --button-border-color: var(--color-primary-button-border);
@@ -1366,7 +1366,7 @@ button.shopify-payment-button__button--unbranded {
 }
 
 .button:hover,
-button.shopify-payment-button__button--unbranded:hover:not([disabled]) {
+button.pardis-payment-button__button--unbranded:hover:not([disabled]) {
   --button-color: var(--color-primary-button-hover-text);
   --button-background-color: var(--color-primary-button-hover-background);
   --button-border-color: var(--color-primary-button-hover-border);
@@ -1385,8 +1385,8 @@ button.shopify-payment-button__button--unbranded:hover:not([disabled]) {
   --button-border-color: var(--color-secondary-button-hover-border);
 }
 
-/* Needed to override the default Shopify styles */
-button.shopify-payment-button__button--unbranded:hover:not([disabled]) {
+/* Needed to override the default Pardis styles */
+button.pardis-payment-button__button--unbranded:hover:not([disabled]) {
   background-color: var(--button-background-color);
 }
 
@@ -1454,16 +1454,16 @@ button.shopify-payment-button__button--unbranded:hover:not([disabled]) {
   text-align: center;
 }
 
-shopify-accelerated-checkout,
-shopify-accelerated-checkout-cart {
-  --shopify-accelerated-checkout-button-border-radius: var(--style-border-radius-buttons-primary);
-  --shopify-accelerated-checkout-button-block-size: var(--height-buy-buttons);
+pardis-accelerated-checkout,
+pardis-accelerated-checkout-cart {
+  --pardis-accelerated-checkout-button-border-radius: var(--style-border-radius-buttons-primary);
+  --pardis-accelerated-checkout-button-block-size: var(--height-buy-buttons);
 }
 
 .product-form-buttons:has(.add-to-cart-button.button-secondary)
-  :is(shopify-accelerated-checkout, shopify-accelerated-checkout-cart) {
-  --shopify-accelerated-checkout-button-border-radius: var(--style-border-radius-buttons-secondary);
-  --shopify-accelerated-checkout-button-block-size: var(--height-buy-buttons);
+  :is(pardis-accelerated-checkout, pardis-accelerated-checkout-cart) {
+  --pardis-accelerated-checkout-button-border-radius: var(--style-border-radius-buttons-secondary);
+  --pardis-accelerated-checkout-button-block-size: var(--height-buy-buttons);
 }
 
 /* Collapsible row */
@@ -1614,7 +1614,7 @@ media-gallery.media-gallery--grid .media-gallery__grid .product-media-container 
   flex-direction: column;
 }
 
-.shopify-model-viewer-ui__controls-area {
+.pardis-model-viewer-ui__controls-area {
   bottom: calc(var(--minimum-touch-target) + var(--padding-sm));
 }
 
@@ -1835,12 +1835,12 @@ Otherwise, it should be a block to rely on its own size */
   padding: inherit;
 }
 
-slideshow-slide .shopify-model-viewer-ui__controls-area.shopify-model-viewer-ui__controls-area {
+slideshow-slide .pardis-model-viewer-ui__controls-area.pardis-model-viewer-ui__controls-area {
   bottom: var(--padding-sm);
   right: var(--padding-sm);
 }
 
-.dialog-zoomed-gallery .shopify-model-viewer-ui__controls-area.shopify-model-viewer-ui__controls-area {
+.dialog-zoomed-gallery .pardis-model-viewer-ui__controls-area.pardis-model-viewer-ui__controls-area {
   /* Move the controls above the thumbnails. Need to calculate the height of the thumbnails list */
   bottom: calc(var(--thumbnail-width) / calc(var(--media-preview-ratio)) + var(--padding-lg) * 2);
   right: var(--padding-lg);
@@ -1848,7 +1848,7 @@ slideshow-slide .shopify-model-viewer-ui__controls-area.shopify-model-viewer-ui_
 
 @media screen and (max-width: 749px) {
   slideshow-component:has(:not(.mobile\:hidden) :is(.slideshow-controls__dots, .slideshow-controls__counter))
-    .shopify-model-viewer-ui__controls-area {
+    .pardis-model-viewer-ui__controls-area {
     /* Position the controls just above the counter */
     bottom: calc(var(--minimum-touch-target) + var(--padding-sm));
   }
@@ -1856,12 +1856,12 @@ slideshow-slide .shopify-model-viewer-ui__controls-area.shopify-model-viewer-ui_
 
 @media screen and (min-width: 750px) {
   slideshow-component:has(:not(.desktop\:hidden) :is(.slideshow-controls__dots, .slideshow-controls__counter))
-    .shopify-model-viewer-ui__controls-area {
+    .pardis-model-viewer-ui__controls-area {
     /* Position the controls just above the counter */
     bottom: calc(var(--minimum-touch-target) + var(--padding-sm));
   }
 
-  .dialog-zoomed-gallery .shopify-model-viewer-ui__controls-area.shopify-model-viewer-ui__controls-area {
+  .dialog-zoomed-gallery .pardis-model-viewer-ui__controls-area.pardis-model-viewer-ui__controls-area {
     /* Move the controls up to match the padding on the thumbnails */
     bottom: var(--padding-lg);
 
@@ -1954,7 +1954,7 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
   aspect-ratio: var(--size-style-aspect-ratio, auto);
 }
 
-.button-shopify-xr {
+.button-pardis-xr {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -1962,14 +1962,14 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
   padding: var(--padding-md);
 }
 
-.button-shopify-xr > svg {
+.button-pardis-xr > svg {
   width: var(--icon-size-sm);
   height: var(--icon-size-sm);
   fill: currentcolor;
   margin-inline-end: var(--margin-md);
 }
 
-.button-shopify-xr[data-shopify-xr-hidden] {
+.button-pardis-xr[data-pardis-xr-hidden] {
   display: none;
 }
 
@@ -2409,7 +2409,7 @@ product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6) > *:not(.tax-note) {
 
 /* RTE styles */
 .rte,
-.shopify-policy__title {
+.pardis-policy__title {
   :is(h1, h2, h3, h4, h5, h6) {
     margin-block: clamp(1.5rem, 1em * 3.3, 2.5rem) clamp(1rem, 1em * 0.25, 2rem);
   }
@@ -2468,7 +2468,7 @@ product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6) > *:not(.tax-note) {
   }
 }
 
-.shopify-policy__container {
+.pardis-policy__container {
   padding-block: var(--padding-xl);
 }
 

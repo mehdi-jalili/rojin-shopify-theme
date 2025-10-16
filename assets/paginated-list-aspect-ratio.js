@@ -21,7 +21,7 @@ export class PaginatedListAspectRatioHelper {
    * @param {HTMLElement} options.templateCard - The template card gallery element to get the image ratio from
    */
   constructor({ templateCard }) {
-    if (!Shopify.designMode) return;
+    if (!Pardis.designMode) return;
     this.#storeImageRatioSettings(templateCard);
   }
 
@@ -29,7 +29,7 @@ export class PaginatedListAspectRatioHelper {
    * Process newly added elements and apply correct aspect ratios
    */
   processNewElements() {
-    if (!Shopify.designMode) return;
+    if (!Pardis.designMode) return;
     // Wait for the DOM to update
     requestAnimationFrame(() => {
       this.#imageRatioSetting === 'adapt' ? this.#fixAdaptiveAspectRatios() : this.#applyFixedAspectRatio();

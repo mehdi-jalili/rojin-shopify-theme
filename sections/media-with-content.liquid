@@ -38,7 +38,7 @@
      {% endif %}
   "
   {% if request.visual_preview_mode %}
-    data-shopify-visual-preview
+    data-pardis-visual-preview
   {% endif %}
 >
   {% content_for 'block', type: '_media-without-appearance', id: 'media' %}
@@ -190,7 +190,7 @@
     }
   }
 
-  .media-with-content[data-shopify-visual-preview] {
+  .media-with-content[data-pardis-visual-preview] {
     --hero-min-height: 500px;
 
     min-height: 500px;
@@ -381,7 +381,7 @@
               "type": "button",
               "settings": {
                 "label": "Shop now",
-                "link": "shopify://collections/all",
+                "link": "pardis://collections/all",
                 "style_class": "link"
               }
             }

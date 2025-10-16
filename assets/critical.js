@@ -479,7 +479,7 @@ function updateTransparentHeaderOffset() {
     return;
   }
 
-  const hasImmediateSection = hasHeaderSection.nextElementSibling?.classList.contains('shopify-section');
+  const hasImmediateSection = hasHeaderSection.nextElementSibling?.classList.contains('pardis-section');
 
   const shouldApplyOffset = !hasImmediateSection ? '1' : '0';
   document.body.style.setProperty('--transparent-header-offset-boolean', shouldApplyOffset);

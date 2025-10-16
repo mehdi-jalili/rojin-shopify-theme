@@ -83,7 +83,7 @@
               if featured_media == blank
                 if product_option_value.variant == blank
                   # It could happen that the particular product_option_value.variant is nil
-                  # (see https://shopify.dev/docs/api/liquid/objects/product_option_value#product_option_value-variant).
+                  # (see https://pardis.dev/docs/api/liquid/objects/product_option_value#product_option_value-variant).
                   # We look for the first available variant in that option (e.g. Color) that has a featured media.
                   for variant in product_resource.variants
                     if variant.available and variant[swatch_option_key] == product_option_value.name and variant.featured_media

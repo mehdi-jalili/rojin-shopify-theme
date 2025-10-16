@@ -4,7 +4,7 @@ import { updateAllHeaderCustomProperties } from '@theme/critical';
 /**
  * @param {Event} event
  */
-document.addEventListener('shopify:block:select', function (event) {
+document.addEventListener('pardis:block:select', function (event) {
   if (event.target instanceof HTMLElement) {
     // Check if the selected element is specifically a product-card block itself
     // Not a child block within the product card
@@ -17,7 +17,7 @@ document.addEventListener('shopify:block:select', function (event) {
     });
 
     if (event.target.tagName === 'PRODUCT-CARD') {
-      const section = event.target.closest('.shopify-section');
+      const section = event.target.closest('.pardis-section');
 
       if (section) {
         const productCardsInSection = section.querySelectorAll('product-card');
@@ -49,7 +49,7 @@ document.addEventListener('shopify:block:select', function (event) {
   }
 });
 
-document.addEventListener('shopify:block:deselect', function (event) {
+document.addEventListener('pardis:block:deselect', function (event) {
   if (event.target instanceof HTMLElement) {
     // Remove data-no-navigation when product card is deselected
     if (event.target.tagName === 'PRODUCT-CARD') {
@@ -66,14 +66,14 @@ document.addEventListener('shopify:block:deselect', function (event) {
   }
 });
 
-document.addEventListener('shopify:section:load', function (event) {
-  if (event.target instanceof HTMLElement && event.target.classList.contains('shopify-section-group-header-group')) {
+document.addEventListener('pardis:section:load', function (event) {
+  if (event.target instanceof HTMLElement && event.target.classList.contains('pardis-section-group-header-group')) {
     updateAllHeaderCustomProperties();
   }
 });
 
-document.addEventListener('shopify:section:unload', function (event) {
-  if (event.target instanceof HTMLElement && event.target.classList.contains('shopify-section-group-header-group')) {
+document.addEventListener('pardis:section:unload', function (event) {
+  if (event.target instanceof HTMLElement && event.target.classList.contains('pardis-section-group-header-group')) {
     setTimeout(() => {
       updateAllHeaderCustomProperties();
     }, 500);
@@ -98,7 +98,7 @@ window.addEventListener('beforeunload', function (event) {
 // Check if the device is iOS as Safari on iOS doesn't support the beforeunload event
 const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
-if (window.Shopify?.designMode && !isIOS) {
+if (window.Pardis?.designMode && !isIOS) {
   // Skip editor state management on iOS devices
   (function editorStateManager() {
     const EDITOR_PREFIX = 'editor-save-state';

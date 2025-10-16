@@ -29,9 +29,9 @@ class CartDrawerComponent extends DialogComponent {
     /**
      * Close cart drawer when installments CTA is clicked to avoid overlapping dialogs
      */
-    customElements.whenDefined('shopify-payment-terms').then(() => {
-      const installmentsContent = document.querySelector('shopify-payment-terms')?.shadowRoot;
-      const cta = installmentsContent?.querySelector('#shopify-installments-cta');
+    customElements.whenDefined('pardis-payment-terms').then(() => {
+      const installmentsContent = document.querySelector('pardis-payment-terms')?.shadowRoot;
+      const cta = installmentsContent?.querySelector('#pardis-installments-cta');
       cta?.addEventListener('click', this.closeDialog, { once: true });
     });
   }

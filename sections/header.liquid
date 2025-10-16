@@ -613,7 +613,7 @@
   }
 
   /* When the header is transparent, add a margin to a potential header-section below it */
-  .header-section:has(.header[transparent]) + .shopify-section {
+  .header-section:has(.header[transparent]) + .pardis-section {
     margin-top: var(--header-height);
   }
 
@@ -621,7 +621,7 @@
    * the height of the header
    */
 
-  main > .shopify-section:first-child .section:not(.disable-section-top-offset) {
+  main > .pardis-section:first-child .section:not(.disable-section-top-offset) {
     &.spacing-style,
     .spacing-style {
       --section-top-offset: calc(var(--header-height) * var(--transparent-header-offset-boolean));

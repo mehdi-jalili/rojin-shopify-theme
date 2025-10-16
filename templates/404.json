@@ -2,7 +2,7 @@
  * ------------------------------------------------------------
  * IMPORTANT: The contents of this file are auto-generated.
  *
- * This file may be updated by the Shopify admin theme editor
+ * This file may be updated by the Pardis admin theme editor
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
@@ -68,7 +68,7 @@
           "name": "t:names.button",
           "settings": {
             "label": "Continue shopping",
-            "link": "shopify://collections/all",
+            "link": "pardis://collections/all",
             "open_in_new_tab": false,
             "style_class": "button",
             "width": "fit-content",

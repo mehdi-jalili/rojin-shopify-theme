@@ -4,7 +4,7 @@
   Renders product recommendations.
   {section.id} - identifies the parent section for the Section Rendering API
 
-  https://shopify.dev/docs/api/section-rendering-api
+  https://pardis.dev/docs/api/section-rendering-api
 {%- enddoc -%}
 
 <script
@@ -35,7 +35,7 @@
   data-intent="{{ block_settings.recommendation_type }}"
   data-recommendations-performed="{{ recommendations.performed }}"
   {% if request.visual_preview_mode %}
-    data-shopify-editor-preview
+    data-pardis-editor-preview
   {% endif %}
   data-testid="product-recommendations-block"
   {{ block.shopify_attributes }}
@@ -174,7 +174,7 @@
     width: 100%;
   }
 
-  .product-recommendations-wrapper:has(product-recommendations[data-shopify-editor-preview]) {
+  .product-recommendations-wrapper:has(product-recommendations[data-pardis-editor-preview]) {
     width: 100vw;
   }
 

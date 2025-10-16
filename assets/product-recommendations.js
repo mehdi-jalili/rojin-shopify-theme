@@ -80,7 +80,7 @@ class ProductRecommendations extends HTMLElement {
         if (!result.success) {
           // The Theme Editor will place a section element element in the DOM whose section_id is not available
           // to the Section Renderer API. In this case, we can safely ignore the error.
-          if (!Shopify.designMode) {
+          if (!Pardis.designMode) {
             this.#handleError(new Error(`Server returned ${result.status}`));
           }
           return;

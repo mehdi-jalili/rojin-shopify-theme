@@ -32,7 +32,7 @@ const MORPH_OPTIONS = {
       return true;
     }
 
-    if (newNode.nodeType === Node.COMMENT_NODE && newNode.nodeValue === 'shopify:rendered_by_section_api') {
+    if (newNode.nodeType === Node.COMMENT_NODE && newNode.nodeValue === 'pardis:rendered_by_section_api') {
       // Remove a comment node injected by the Section Rendering API in the Theme Editor
       return true;
     }
@@ -134,7 +134,7 @@ function walk(newNode, oldNode, options) {
   // Check node type and tag name first
   if (newNode.nodeType !== oldNode.nodeType) return newNode;
   if (newNode instanceof Element && oldNode instanceof Element) {
-    // Skip morphing if the node is shopify-accelerated-checkout-cart https://shopify.dev/docs/storefronts/themes/pricing-payments/accelerated-checkout#implement-accelerated-checkout-buttons-on-cart
+    // Skip morphing if the node is pardis-accelerated-checkout-cart https://pardis.dev/docs/storefronts/themes/pricing-payments/accelerated-checkout#implement-accelerated-checkout-buttons-on-cart
     if (oldNode.tagName === 'SHOPIFY-ACCELERATED-CHECKOUT-CART') return oldNode;
 
     if (newNode.tagName !== oldNode.tagName) return newNode;
