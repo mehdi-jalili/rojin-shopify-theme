@@ -65,5 +65,109 @@
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}
     {% endif %}
+
+    {% if settings.age_verifier_enabled %}
+      <div id="age-verification-overlay" style="display: none;">
+        <div id="age-verification-popup">
+          <h3>{{ settings.age_verifier_title | default: "Age Verifivation" }}</h3>
+          <p>{{ settings.age_verifier_message | default: "You must be 18 years or older to access this website. Please verify your age" }}</p>
+          <button id="age-confirm">
+            {{ settings.age_verifier_confirm_text | default: "I`m over 18" }}
+          </button>
+          <button id="age-deny">
+            {{ settings.age_verifier_deny_text | default: "Cancel" }}
+          </button>
+        </div>
+      </div>
+
+      <style>
+        #age-verification-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0,0,0,0.8);
+          z-index: 9999;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        #age-verification-popup {
+          background: white;
+          padding: 30px;
+          border-radius: 10px;
+          text-align: center;
+          max-width: 400px;
+          margin: 20px;
+        }
+
+        #age-verification-popup button {
+          margin: 10px;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+
+        #age-confirm {
+          background: #007bff;
+          color: white;
+        }
+
+        #age-deny {
+          background: #6c757d;
+          color: white;
+        }
+      </style>
+
+      <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const overlay = document.getElementById('age-verification-overlay');
+        const confirmBtn = document.getElementById('age-confirm');
+        const denyBtn = document.getElementById('age-deny');
+        
+        // بررسی آیا کاربر قبلاً تایید کرده است
+        if (!getCookie('age_verified')) {
+          overlay.style.display = 'flex';
+        }
+        
+        // تایید سن
+        confirmBtn.addEventListener('click', function() {
+          setCookie('age_verified', 'true', 30); // 30 روز معتبر
+          overlay.style.display = 'none';
+        });
+        
+        // رد سن
+        denyBtn.addEventListener('click', function() {
+          {% if settings.deny_redirect_url %}
+            window.location.href = '{{ settings.deny_redirect_url }}';
+          {% else %}
+            window.location.href = 'https://www.google.com';
+          {% endif %}
+        });
+        
+        // توابع کمکی برای کوکی
+        function setCookie(name, value, days) {
+          const date = new Date();
+          date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+          const expires = "expires=" + date.toUTCString();
+          document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+        
+        function getCookie(name) {
+          const nameEQ = name + "=";
+          const ca = document.cookie.split(';');
+          for(let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+          }
+          return null;
+        }
+      });
+      </script>
+    {% endif %}
   </body>
 </html>
