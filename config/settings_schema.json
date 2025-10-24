@@ -1,11 +1,11 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Horizon",
-    "theme_version": "3.0.1",
-    "theme_author": "Shopify",
+    "theme_name": "Rojin",
+    "theme_version": "1.0.0",
+    "theme_author": "Mehdi Jalili",
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
-    "theme_support_url": "https://support.shopify.com/"
+    "theme_support_url": "mailto:jalilimehdi.1366@gmail.com"
   },
   {
     "name": "t:names.logo_and_favicon",
