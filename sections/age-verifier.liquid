@@ -1,15 +1,27 @@
 
-<div id="age-verification-overlay" style="display: flex;">
-  <div id="age-verification-popup">
+{% assign age_verified = false %}
+{% if request.cookies.age_verified == 'true' %}
+  {% assign age_verified = true %}
+{% endif %}
 
-    <h3>Age verifier</h3>
-    <p>Age verifier Age verifier Age verifier</p>
-    <button id="age-confirm">
-      confirm
-    </button>
-    <button id="age-deny">
-      cancel
-    </button>
-    
+{% unless age_verified %}
+  {{ 'age-verifier.css' | asset_url | stylesheet_tag }}
+  {{ 'age-verifier.js' | asset_url | script_tag }}
+
+  <div id="age-verification-overlay" style="display: none;">
+    <div id="age-verification-popup">
+      <h3>{{ section.settings.title | default: 'Age verification' }}</h3>
+      <p>{{ section.settings.message | default: 'You must be 18 years or older to enter this website' }}</p>
+      <button id="age-confirm">
+        {{ section.settings.confirm_text | default: 'Yes, I am 18 or older' }}
+      </button>
+      <button id="age-deny">
+        {{ section.settings.deny_text | default: 'No, I am under 18' }}
+      </button>
+    </div>
   </div>
-</div>
+{% else %}
+  <script>
+    console.log('User already age verified - Skipping age verifier section');
+  </script>
+{% endunless %}
