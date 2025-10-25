@@ -1,12 +1,5 @@
-
-{% assign age_verified = false %}
-{% if request.cookies.age_verified == 'true' %}
-  {% assign age_verified = true %}
-{% endif %}
-
-{% unless age_verified %}
-  {{ 'age-verifier.css' | asset_url | stylesheet_tag }}
-  {{ 'age-verifier.js' | asset_url | script_tag }}
+{{ 'age-verifier.css' | asset_url | stylesheet_tag }}
+{{ 'age-verifier.js' | asset_url | script_tag }}
 
   <div id="age-verification-overlay" style="display: none;">
     <div id="age-verification-popup">
@@ -20,8 +13,3 @@
       </button>
     </div>
   </div>
-{% else %}
-  <script>
-    console.log('User already age verified - Skipping age verifier section');
-  </script>
-{% endunless %}
