@@ -8,6 +8,17 @@
     "theme_support_url": "mailto:jalilimehdi.1366@gmail.com"
   },
   {
+    "name": "t:names.test_block",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "test_checkbox",
+        "label": "t:settings.test_checkbox",
+        "default": true
+      }
+    ]
+  },
+  {
     "name": "t:names.logo_and_favicon",
     "settings": [
       {
