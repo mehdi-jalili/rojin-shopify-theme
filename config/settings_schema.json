@@ -2289,38 +2289,34 @@
     "name": "Age Verifier",
     "settings": [
       {
-        "type": "header",
-        "content": "Age Verifier Settings"
+        "type": "checkbox",
+        "id": "enable_age_verifier",
+        "label": "Enable Age Verification",
+        "default": true
       },
       {
         "type": "text",
         "id": "age_verifier_title",
-        "label": "Popup title",
+        "label": "Title",
         "default": "Age verification"
       },
       {
-        "type": "textarea",
+        "type": "text",
         "id": "age_verifier_message",
-        "label": "Popup message", 
+        "label": "Message",
         "default": "You must be 18 years or older to enter this website"
       },
       {
         "type": "text",
         "id": "age_verifier_confirm_text",
-        "label": "Confirm button text",
+        "label": "Confirm Button Text",
         "default": "Yes, I am 18 or older"
       },
       {
-        "type": "text", 
+        "type": "text",
         "id": "age_verifier_deny_text",
-        "label": "Deny button text",
+        "label": "Deny Button Text",
         "default": "No, I am under 18"
-      },
-      {
-        "type": "number",
-        "id": "minimum_age",
-        "label": "Minimum age required",
-        "default": 18
       }
     ]
   }

@@ -66,6 +66,12 @@
       {% render 'quick-add-modal' %}
     {% endif %}
 
+  {% comment %}
+    {% if settings.enable_age_verifier %}
+      {% render 'age-verifier' %}
+    {% endif %}
+{% endcomment %}
+
     {% render 'age-verifier' %}
   </body>
 </html>

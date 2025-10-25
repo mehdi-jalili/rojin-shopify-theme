@@ -1,17 +1,16 @@
-{% if request.cookies.age_verified != 'true' %}
-  {{ 'age-verifier.css' | asset_url | stylesheet_tag }}
-  {{ 'age-verifier.js' | asset_url | script_tag }}
+
+{{ 'age-verifier.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'age-verifier.js' | asset_url }}" defer></script>
 
   <div id="age-verification-overlay" style="display: none;">
     <div id="age-verification-popup">
-      <h3>{{ title | default: 'Age verification' }}</h3>
-      <p>{{ message | default: 'You must be 18 years or older to enter this website' }}</p>
+      <h3>{{ settings.age_verifier_title }}</h3>
+      <p>{{ settings.age_verifier_message }}</p>
       <button id="age-confirm">
-        {{ confirm_text | default: 'Yes, I am 18 or older' }}
+        {{ settings.age_verifier_confirm_text }}
       </button>
       <button id="age-deny">
-        {{ deny_text | default: 'No, I am under 18' }}
+        {{ settings.age_verifier_deny_text }}
       </button>
     </div>
   </div>
-{% endif %}
