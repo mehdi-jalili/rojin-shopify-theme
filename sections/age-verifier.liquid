@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // تایید سن
   confirmBtn.addEventListener('click', function() {
-    //setCookie('age_verified', 'true', 30);
+    setCookie('age_verified', 'true', 30);
     overlay.style.display = 'none';
     console.log('Age confirmed');
   });
@@ -106,14 +106,15 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Age denied');
   });
   
-  /* توابع کمکی برای کوکی
+  // توابع کمکی برای کوکی
   function setCookie(name, value, days) {
     const date = new Date();
-    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    //date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    date.setTime(date.getTime() + (10000));
     const expires = "expires=" + date.toUTCString();
     document.cookie = name + "=" + value + ";" + expires + ";path=/";
     console.log('Cookie set: ' + name);
-  } */
+  }
   
   function getCookie(name) {
     const nameEQ = name + "=";
