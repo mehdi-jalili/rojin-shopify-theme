@@ -66,11 +66,6 @@
       {% render 'quick-add-modal' %}
     {% endif %}
 
-    {% if request.cookies.age_verified == 'true' %}
-      {% assign age_verified = true %}
-    {% endif %}
-    {% unless age_verified %}
-      {% section 'age-verifier' %}
-    {% endunless %}
+    {% section 'age-verifier' %}
   </body>
 </html>
