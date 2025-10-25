@@ -1,22 +1,11 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Rojin",
-    "theme_version": "1.0.0",
-    "theme_author": "Mehdi Jalili",
+    "theme_name": "Horizon",
+    "theme_version": "3.0.1",
+    "theme_author": "Shopify",
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
-    "theme_support_url": "mailto:jalilimehdi.1366@gmail.com"
-  },
-  {
-    "name": "t:names.test_block",
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "test_checkbox",
-        "label": "t:settings.test_checkbox",
-        "default": true
-      }
-    ]
+    "theme_support_url": "https://support.shopify.com/"
   },
   {
     "name": "t:names.logo_and_favicon",
@@ -1438,41 +1427,6 @@
         ],
         "default": "lift",
         "info": "t:info.hover_effects"
-      }
-    ]
-  },
-  {
-    "name": "t:names.age_verifier",
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "enable_age_verifier",
-        "label": "t:settings.enable_age_verifier",
-        "default": true
-      },
-      {
-        "type": "text",
-        "id": "age_verifier_title",
-        "label": "t:settings.age_verifier_title",
-        "default": "Age verification"
-      },
-      {
-        "type": "text",
-        "id": "age_verifier_message",
-        "label": "t:settings.age_verifier_message",
-        "default": "You must be 18 years or older to enter this website"
-      },
-      {
-        "type": "text",
-        "id": "age_verifier_confirm_text",
-        "label": "t:settings.age_verifier_confirm_text",
-        "default": "Yes, I am 18 or older"
-      },
-      {
-        "type": "text",
-        "id": "age_verifier_deny_text",
-        "label": "t:settings.age_verifier_deny_text",
-        "default": "No, I am under 18"
       }
     ]
   },
