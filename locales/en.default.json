@@ -319,5 +319,17 @@
       "sold_out": "Sold out",
       "unavailable": "Unavailable"
     }
+  },
+  "names": {
+    "animations": "Animations",
+    "age_verifier": "Age Verifier"
+  },
+  "settings": {
+    "page_transition_enabled": "Enable page transitions",
+    "enable_age_verifier": "Enable Age Verification",
+    "age_verifier_title": "Title",
+    "age_verifier_message": "Message",
+    "age_verifier_confirm_text": "Confirm Button Text",
+    "age_verifier_deny_text": "Deny Button Text"
   }
 }
