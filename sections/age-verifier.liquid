@@ -13,48 +13,78 @@
 </div>
 
 <style>
-/* CSS styles here (همان قبلی) */
+
+    #age-verification-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    }
+
+    #age-verification-popup {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    margin: 20px;
+    }
+
+    #age-verification-popup button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+
+    #age-confirm {
+    background: #007bff;
+    color: white;
+    }
+
+    #age-deny {
+    background: #6c757d;
+    color: white;
+    }
+
 </style>
 
-<script> /*
-document.addEventListener('DOMContentLoaded', function() {
-  const overlay = document.getElementById('age-verification-overlay');
-  const confirmBtn = document.getElementById('age-confirm');
-  const denyBtn = document.getElementById('age-deny');
-  
-  if (!getCookie('age_verified')) {
-    overlay.style.display = 'flex';
-  }
-  
-  confirmBtn.addEventListener('click', function() {
-    setCookie('age_verified', 'true', 30);
-    overlay.style.display = 'none';
-  });
-  
-  denyBtn.addEventListener('click', function() {
-    {% if settings.deny_redirect_url %}
-      window.location.href = '{{ settings.deny_redirect_url }}';
-    {% else %}
-      window.location.href = '/';
-    {% endif %}
-  });
-  
-  function setCookie(name, value, days) {
-    const date = new Date();
-    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-    const expires = "expires=" + date.toUTCString();
-    document.cookie = name + "=" + value + ";" + expires + ";path=/";
-  }
-  
-  function getCookie(name) {
-    const nameEQ = name + "=";
-    const ca = document.cookie.split(';');
-    for(let i = 0; i < ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+
+{% schema %}
+{
+  "name": "Age Verifier",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Popup title",
+      "default": "Age verification"
+    },
+    {
+      "type": "textarea",
+      "id": "message", 
+      "label": "Popup message",
+      "default": "You must be 18 years or older to enter this website"
+    },
+    {
+      "type": "text",
+      "id": "confirm_text",
+      "label": "Confirm button text",
+      "default": "Yes, I am 18 or older"
+    },
+    {
+      "type": "text",
+      "id": "deny_text",
+      "label": "Deny button text", 
+      "default": "No, I am under 18"
     }
-    return null;
-  }
-}); /*
-</script>
+  ]
+}
+{% endschema %}
