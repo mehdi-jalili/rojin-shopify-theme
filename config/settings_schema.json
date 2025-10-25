@@ -2284,5 +2284,44 @@
         "default": "equal-width-buttons"
       }
     ]
+  },
+  {
+    "name": "Age Verifier",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Age Verifier Settings"
+      },
+      {
+        "type": "text",
+        "id": "age_verifier_title",
+        "label": "Popup title",
+        "default": "Age verification"
+      },
+      {
+        "type": "textarea",
+        "id": "age_verifier_message",
+        "label": "Popup message", 
+        "default": "You must be 18 years or older to enter this website"
+      },
+      {
+        "type": "text",
+        "id": "age_verifier_confirm_text",
+        "label": "Confirm button text",
+        "default": "Yes, I am 18 or older"
+      },
+      {
+        "type": "text", 
+        "id": "age_verifier_deny_text",
+        "label": "Deny button text",
+        "default": "No, I am under 18"
+      },
+      {
+        "type": "number",
+        "id": "minimum_age",
+        "label": "Minimum age required",
+        "default": 18
+      }
+    ]
   }
 ]

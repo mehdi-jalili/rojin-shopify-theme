@@ -1,0 +1,60 @@
+
+<div id="age-verification-overlay" style="display: flex;">
+  <div id="age-verification-popup">
+    <h3>{{ settings.age_verifier_title }}</h3>
+    <p>{{ settings.age_verifier_message }}</p>
+    <button id="age-confirm">
+      {{ settings.age_verifier_confirm_text }}
+    </button>
+    <button id="age-deny">
+      {{ settings.age_verifier_deny_text }}
+    </button>
+  </div>
+</div>
+
+<style>
+/* CSS styles here (همان قبلی) */
+</style>
+
+<script> /*
+document.addEventListener('DOMContentLoaded', function() {
+  const overlay = document.getElementById('age-verification-overlay');
+  const confirmBtn = document.getElementById('age-confirm');
+  const denyBtn = document.getElementById('age-deny');
+  
+  if (!getCookie('age_verified')) {
+    overlay.style.display = 'flex';
+  }
+  
+  confirmBtn.addEventListener('click', function() {
+    setCookie('age_verified', 'true', 30);
+    overlay.style.display = 'none';
+  });
+  
+  denyBtn.addEventListener('click', function() {
+    {% if settings.deny_redirect_url %}
+      window.location.href = '{{ settings.deny_redirect_url }}';
+    {% else %}
+      window.location.href = '/';
+    {% endif %}
+  });
+  
+  function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+  }
+  
+  function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+  }
+}); /*
+</script>
