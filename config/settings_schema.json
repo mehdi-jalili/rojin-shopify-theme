@@ -1431,36 +1431,36 @@
     ]
   },
   {
-    "name": "Age Verifier",
+    "name": "t:names.age_verifier",
     "settings": [
       {
         "type": "checkbox",
         "id": "enable_age_verifier",
-        "label": "Enable Age Verification",
+        "label": "t:settings.enable_age_verifier",
         "default": true
       },
       {
         "type": "text",
         "id": "age_verifier_title",
-        "label": "Title",
+        "label": "t:settings.age_verifier_title",
         "default": "Age verification"
       },
       {
         "type": "text",
         "id": "age_verifier_message",
-        "label": "Message",
+        "label": "t:settings.age_verifier_message",
         "default": "You must be 18 years or older to enter this website"
       },
       {
         "type": "text",
         "id": "age_verifier_confirm_text",
-        "label": "Confirm Button Text",
+        "label": "t:settings.age_verifier_confirm_text",
         "default": "Yes, I am 18 or older"
       },
       {
         "type": "text",
         "id": "age_verifier_deny_text",
-        "label": "Deny Button Text",
+        "label": "t:settings.age_verifier_deny_text",
         "default": "No, I am under 18"
       }
     ]
