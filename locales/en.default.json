@@ -319,13 +319,5 @@
       "sold_out": "Sold out",
       "unavailable": "Unavailable"
     }
-  },
-    {
-    "names": {
-      "test_block": "Test Block"
-    },
-    "settings": {
-      "test_checkbox": "Test Checkbox"
-    }
   }
 }
