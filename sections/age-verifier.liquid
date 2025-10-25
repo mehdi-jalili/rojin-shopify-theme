@@ -1,15 +1,165 @@
-
-<div id="age-verification-overlay" style="display: flex;">
+<div id="age-verification-overlay" style="display: none;">
   <div id="age-verification-popup">
-
-    <h3>Age verifier</h3>
-    <p>Age verifier Age verifier Age verifier</p>
+    <h3>{{ section.settings.title | default: 'Age verification' }}</h3>
+    <p>{{ section.settings.message | default: 'You must be 18 years or older to enter this website' }}</p>
     <button id="age-confirm">
-      confirm
+      {{ section.settings.confirm_text | default: 'Yes, I am 18 or older' }}
     </button>
     <button id="age-deny">
-      cancel
+      {{ section.settings.deny_text | default: 'No, I am under 18' }}
     </button>
-    
   </div>
 </div>
+
+<style>
+#age-verification-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#age-verification-popup {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+#age-verification-popup h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+#age-verification-popup p {
+  margin-bottom: 20px;
+  color: #666;
+  line-height: 1.5;
+}
+
+#age-verification-popup button {
+  margin: 10px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+#age-confirm {
+  background: #007bff;
+  color: white;
+}
+
+#age-confirm:hover {
+  background: #0056b3;
+}
+
+#age-deny {
+  background: #6c757d;
+  color: white;
+}
+
+#age-deny:hover {
+  background: #545b62;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('Age Verifier Loaded'); // برای دیباگ
+  
+  const overlay = document.getElementById('age-verification-overlay');
+  const confirmBtn = document.getElementById('age-confirm');
+  const denyBtn = document.getElementById('age-deny');
+  
+  // بررسی آیا کاربر قبلاً تایید کرده است
+  if (!getCookie('age_verified')) {
+    console.log('Showing age verification');
+    setTimeout(() => {
+      overlay.style.display = 'flex';
+    }, 1000);
+  } else {
+    console.log('User already verified');
+  }
+  
+  // تایید سن
+  confirmBtn.addEventListener('click', function() {
+    //setCookie('age_verified', 'true', 30);
+    overlay.style.display = 'none';
+    console.log('Age confirmed');
+  });
+  
+  // رد سن
+  denyBtn.addEventListener('click', function() {
+    window.location.href = 'https://www.google.com';
+    console.log('Age denied');
+  });
+  
+  /* توابع کمکی برای کوکی
+  function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    console.log('Cookie set: ' + name);
+  } */
+  
+  function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) == 0) {
+        console.log('Cookie found: ' + name);
+        return c.substring(nameEQ.length, c.length);
+      }
+    }
+    console.log('Cookie not found: ' + name);
+    return null;
+  }
+});
+</script>
+
+{% schema %}
+{
+  "name": "Age Verifier",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Popup title",
+      "default": "Age verification"
+    },
+    {
+      "type": "textarea", 
+      "id": "message",
+      "label": "Popup message",
+      "default": "You must be 18 years or older to enter this website"
+    },
+    {
+      "type": "text",
+      "id": "confirm_text",
+      "label": "Confirm button text",
+      "default": "Yes, I am 18 or older"
+    },
+    {
+      "type": "text",
+      "id": "deny_text",
+      "label": "Deny button text",
+      "default": "No, I am under 18"
+    }
+  ]
+}
+{% endschema %}
