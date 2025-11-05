@@ -2319,5 +2319,16 @@
         "default": "No, I am under 18"
       }
     ]
+  },
+  {
+    "name": "t:names.tap_to_top_button",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_tap_to_top_button",
+        "label": "t:settings.enable_tap_to_top_button",
+        "default": true
+      }
+    ]
   }
 ]
